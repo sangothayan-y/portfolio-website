@@ -2,25 +2,34 @@ html{
     scroll-behavior: smooth;
 }
 
-sedction{
+section{
     min-height: 100vh;
 }
 
 nav{
 
     background-color: #0B1933;
-    height: 135px;
+    height: 145px;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
     width:auto;
 }
 
 #navigation{
-    margin-top: 20px;
-    margin-left: 80px;
+   max-width: 1200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+    margin-top: 10px;
+    margin-left: 40px;
     background:rgba(255,255,255,0.15) ;
-    backdrop-filter: blur;
+    backdrop-filter: blur(10px);
     padding:1rem;
     position:fixed;
-    width:80%;
+    width:85%;
     left:50%;
     transform:translateX(-50%);
     top:2rem;
@@ -30,20 +39,28 @@ nav{
 }
 
 nav a{
-    
+    font-family: poppins;
+    font-size: 20px;    
     color: white;
     text-decoration: none;
     font-weight: 500;
     display: inline-block;
-     padding: 0.5rem 1rem 0.2rem;
-     transition:all 0.3s ease-in-out;
+    padding: 10px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    transition:all 0.3s ease-in-out;
 }
 nav a:hover{
 
     transform:translate(5%);
 }
 #let{
-    padding: 1%;
+    display: inline-block;
+    
+}
+#let a{
+     display: inline-block;
+    padding: 10px 20px;
     border-radius:21px ;
     background-color:#B3CFE5 ;
     color: #0B1933;
