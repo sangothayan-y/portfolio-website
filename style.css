@@ -4,6 +4,7 @@ html{
 
 section{
     min-height: 100vh;
+    scroll-margin-top: 135px;
 }
 
 nav{
@@ -13,9 +14,16 @@ nav{
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
     width:auto;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+
+    z-index: 10;
+    
 }
 
-#navigation{
+nav #navigation{
    max-width: 1200px;
 
     display: flex;
@@ -67,4 +75,310 @@ nav a:hover{
 }
 nav a i{
     padding-left: 5px;
+}
+
+#home {
+    margin-left: 100px;
+    margin-top: 200px;
+    color: #0B1933;
+    font-family: poppins;
+}
+#home h1{
+    font-size: 65px;
+    font-style: bold   ;
+    font-weight: 900;
+    margin-top: -50px;
+    
+}
+#home h4{
+    font-size: 40px;
+     font-style: bold   ;
+     
+}
+ #bict{
+    font-family: nunito, sans-serif;
+    font-size: 48px;
+    color: #0B1933;
+     margin-top: -30px;
+     font-weight: 700;
+}
+#abt{
+    font-family: nunito,sans-serif;
+    font-size: 32px;
+     color: #0B1933;
+     margin-top: -30px;
+     font-weight: 500;
+} 
+
+#btns{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+}
+button {
+  font-family: inherit;
+  font-size: 32px;
+  background: #0B1933;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+button span {
+  display: inline-block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/* From Uiverse.io by Na3ar-17 */ 
+.container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  background-color: transparent;
+  border: 2px solid #0B1933;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 5px;
+  position: relative;
+}
+
+.label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  transition: all 0.4s ease;
+  border-radius: 100%;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .input {
+  display: none;
+}
+
+.label .title {
+    margin: 0;
+  font-size: 32px;
+  color: #1B3D63;
+  transition: all 0.4s ease;
+  position:absolute;
+  margin-top: 100px;
+  right: 18px;
+  bottom: 14px;
+  text-align: center;
+}
+
+.label .title:last-child {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .circle {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: #0B1933;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.label .circle .icon {
+  color: #fff;
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.label .circle .square {
+  aspect-ratio: 1;
+  width: 15px;
+  border-radius: 2px;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.label .circle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #3333a8;
+  width: 100%;
+  height: 0;
+  transition: all 0.4s ease;
+}
+
+.label:has(.input:checked) {
+  width: 57px;
+  animation: installed 0.4s ease 3.5s forwards;
+}
+
+.label:has(.input:checked)::before {
+  animation: rotate 3s ease-in-out 0.4s forwards;
+}
+
+.label .input:checked + .circle {
+  animation:
+    pulse 1s forwards,
+    circleDelete 0.2s ease 3.5s forwards;
+  rotate: 180deg;
+}
+
+.label .input:checked + .circle::before {
+  animation: installing 3s ease-in-out forwards;
+}
+
+.label .input:checked + .circle .icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .input:checked ~ .circle .square {
+  opacity: 1;
+  visibility: visible;
+}
+
+.label .input:checked ~ .title {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.label .input:checked ~ .title:last-child {
+  animation: showInstalledMessage 0.4s ease 3.5s forwards;
+}
+
+@keyframes pulse {
+  0% {
+    scale: 0.95;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    scale: 1;
+    box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
+  }
+  100% {
+    scale: 0.95;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes installing {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-90deg) translate(27px) rotate(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    transform: rotate(270deg) translate(27px) rotate(270deg);
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes installed {
+  100% {
+    width: 150px;
+    border-color: #1B3D63;
+  }
+}
+
+@keyframes circleDelete {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes showInstalledMessage {
+  100% {
+    opacity: 1;
+    visibility: visible;
+    right: 56px;
+  }
 }
