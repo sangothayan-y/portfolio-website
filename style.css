@@ -580,8 +580,9 @@ button:active {
 }
 
 #circle{
-  width:40%;
-  height: 40%;
+  margin-top: 70px;
+  width:500px;
+  height: 500px;
   border-radius: 50%;
   background:linear-gradient(135deg,#214B99 20%,#0B1933 100%);
   
